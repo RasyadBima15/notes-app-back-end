@@ -1,0 +1,26 @@
+To try nodemon, create a new npm runner script to run server.js using nodemon.
+"scripts": {
+    "start": "nodemon server.js"
+},
+
+
+Before using eslint, you need to configure it first. You do this by using the following command in the project Terminal.
+npx eslint --init
+
+Then you will be asked a number of questions, please answer the questions with the following answers:
+
+How would you like to use ESLint? -> To check, find problems, and enforce code style.
+What type of modules does your project use? -> CommonJS (require/exports).
+Which framework did you use? -> None of these.
+Does your project use TypeScript? -> N.
+Where does your code run? -> Node (select using space).
+How would you like to define a style for your project? -> Use a popular style guide.
+Which style guide do you want to follow? -> (You are free to choose, for example choose AirBnB).
+What format do you want your config file to be in? -> JSONs.
+Would you like to …… (the whole next question) -> Y.
+
+then we use ESLint to check the JavaScript code in the project. But before that, we need to add the following npm runner inside the package.json file:
+"scripts": {
+  "start": "nodemon server.js",
+  "lint": "eslint ./"
+},

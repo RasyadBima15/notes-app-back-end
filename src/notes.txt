@@ -1,0 +1,8 @@
+the id property is a string and must be unique, we will use the help of a third party library to generate the value. nanoid is one of the popular libraries to handle this. So, please install the library with the command.
+npm install nanoid@3.x.x
+we just need to call the nanoid() method and pass in the number parameter which is the size of the string.
+const id = nanoid(16);
+
+Then the createdAt and updatedAt properties. Since the current case is adding a new record, the values ​​of the two properties should be the same. So, we can simply pass the value new Date().toISOString();.
+  const createdAt = new Date().toISOString();
+  const updatedAt = createdAt;
