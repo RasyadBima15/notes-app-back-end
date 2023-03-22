@@ -1,9 +1,9 @@
-const {addNoteHandler, getAllNotesHandler, getNoteByIdHandler,editNoteByIdHandler,deleteNoteByIdHandler} = require("./handler")
-const routes = [
+//karena menggunakan plugin, kita akan menggunakan pendekatan yang berbeda. Kita tidak akan menggunakan fungsi-fungsi handler dari hasil impor secara langsung, melainkan handler yang akan digunakan pada route kali ini dimasukkan sebagai parameter fungsi.
+const routes = (handler) => [
     {
         method: 'POST',
         path: '/notes',
-        handler: addNoteHandler,
+        handler: handler.postNoteHandler,
         //With Hapi, CORS can be set on specific routes by adding the options.cors property in the route configuration. Examples like this:
         // options: {
         //     cors: {
@@ -14,22 +14,22 @@ const routes = [
     {
         method: 'GET',
         path: '/notes',
-        handler: getAllNotesHandler,
+        handler: handler.getNotesHandler,
     },
     {
         method: 'GET',
         path: '/notes/{id}',
-        handler: getNoteByIdHandler,
+        handler: handler.getNoteByIdHandler,
     },
     {
         method: 'PUT',
         path: '/notes/{id}',
-        handler: editNoteByIdHandler,
+        handler: handler.putNoteByIdHandler,
     },
     {
         method: 'DELETE',
         path: '/notes/{id}',
-        handler: deleteNoteByIdHandler,
+        handler: handler.deleteNoteByIdHandler,
     },
 ];
 module.exports = routes;

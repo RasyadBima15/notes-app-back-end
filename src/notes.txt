@@ -6,3 +6,6 @@ const id = nanoid(16);
 Then the createdAt and updatedAt properties. Since the current case is adding a new record, the values ​​of the two properties should be the same. So, we can simply pass the value new Date().toISOString();.
   const createdAt = new Date().toISOString();
   const updatedAt = createdAt;
+
+Plugin pada Hapi digunakan untuk memudahkan Anda dalam break your application up alias memisah-misahkan komponen aplikasi yang Anda buat 
+Tujuan dari penggunaan Plugin itu sendiri tak lain untuk membuat logika bisnis atau utilitas terpisah atau terisolasi agar dalam mengembangkan aplikasi dapat terpetakan fokusnya.
