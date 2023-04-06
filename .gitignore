@@ -1,3 +1,5 @@
 node_modules
 notes-api-webserver.pem 
 postman
+.env
+.prod.env
