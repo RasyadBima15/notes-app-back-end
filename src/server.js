@@ -1,4 +1,4 @@
-const Hapi = require("@hapi/hapi");
+const hapi = require("@hapi/hapi");
 const notes = require("./api/notes");
 const NotesService = require("./services/postgres/NotesService");
 const NotesValidator = require("./validator/notes");
@@ -6,9 +6,9 @@ require('dotenv').config();
 
 const init = async () => {
     const notesService = new NotesService();
-    const server = Hapi.server({
+    const server = hapi.server({
         port: process.env.PORT,
-        host: process.env.HOST,
+        host: process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0',
         //If you want a wider scope, alias CORS is enabled for all routes on the server, you can specify CORS in the configuration when you want to create a server by adding the routes.cors property. Examples like this:
         routes: {
             cors: {
