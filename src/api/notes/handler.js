@@ -19,13 +19,13 @@ class NotesHandler {
             this._validator.validateNotePayload(request.payload);
             const {title = 'untitled', body, tags} = request.payload;
 
-            const noteID = await this._service.addNote({title, body, tags});
+            const noteId = await this._service.addNote({title, body, tags});
 
             const response = h.response({
                 status: 'success',
                 message: 'Catatan berhasil ditambahkan',
                 data: {
-                    noteID,
+                    noteId,
                 },
             });
             response.code(201);
