@@ -24,3 +24,8 @@ then we use ESLint to check the JavaScript code in the project. But before that,
   "start": "nodemon server.js",
   "lint": "eslint ./"
 },
+
+this is how to generate access token & refresh token key
+first, we have to type "node" in terminal
+and then type require('crypto').randomBytes(64).toString('hex');
+last, we copy the string token (do not copy the quote '')
